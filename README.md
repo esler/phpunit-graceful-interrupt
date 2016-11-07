@@ -1,6 +1,19 @@
 ## What's is this?
 A simple plug-in which allows to you interrupt running PHPUnit tests gracefully.
 
+## Instalation
+```bash
+composer require --dev esler/phpunit-graceful-interrupt
+```
+Add listener to your `phpunit.xml`
+```xml
+<phpunit>
+  <listeners>
+    <listener class="Esler\PHPUnit\Listener\GracefulInterruptListener" />
+  </listeners>
+</phpunit>
+```
+
 ## Why?
 Is this familiar to you?
 
