@@ -1,0 +1,25 @@
+{
+    "name": "esler/phpunit-graceful-interrupt",
+    "description": "Allow gracefully interrupt running PHPUnit tests",
+    "keywords": ["phpunit", "graceful", "interrupt"],
+    "homepage": "https://github.com/esler/phpunit-graceful-interrupt",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ondrej Esler",
+            "email": "esler.ondrej@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": ">=4.8"
+    },
+    "autoload": {
+        "psr-4": {
+            "Esler\\": "src"
+        }
+    }
+}

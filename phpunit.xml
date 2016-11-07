@@ -1,0 +1,10 @@
+<phpunit>
+    <listeners>
+        <listener class="Esler\PHPUnit\Listener\GracefulInterruptListener" file="./src/PHPUnit/Listener/GracefulInterruptListener.php" />
+    </listeners>
+    <testsuites>
+        <testsuite name="Fake testsuite">
+            <directory>./tests/unit/</directory>
+        </testsuite>
+    </testsuites>
+</phpunit>
