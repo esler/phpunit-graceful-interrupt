@@ -46,8 +46,8 @@ class GracefulInterruptListenerTest extends \PHPUnit_Framework_TestCase
      *
      * @return void
      */
-    public function testAckermann39() {
-        self::assertEquals(2045, $this->_ackermann(3, 8));
+    public function testAckermann310() {
+        self::assertEquals(8189, $this->_ackermann(3, 10));
     }
 
     /**
@@ -55,8 +55,8 @@ class GracefulInterruptListenerTest extends \PHPUnit_Framework_TestCase
      *
      * @return void
      */
-    public function testAckermann310() {
-        self::assertEquals(8189, $this->_ackermann(3, 10));
+    public function testAckermann311() {
+        self::assertEquals(16381, $this->_ackermann(3, 11));
     }
 
     private function _ackermann($m, $n) {
