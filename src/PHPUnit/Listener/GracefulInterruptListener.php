@@ -2,8 +2,8 @@
 namespace Esler\PHPUnit\Listener;
 
 use BadMethodCallException;
-use PHPUnit_Framework_BaseTestListener;
-use PHPUnit_Framework_Test;
+use PHPUnit\Framework\BaseTestListener;
+use PHPUnit\Framework\Test;
 
 /**
  * This class defines an extension for PHPUnit.
@@ -14,7 +14,7 @@ use PHPUnit_Framework_Test;
  * @author     Ondrej Esler <esler.ondrej@gmail.com>
  * @license    MIT
  */
-class GracefulInterruptListener extends PHPUnit_Framework_BaseTestListener
+class GracefulInterruptListener extends BaseTestListener
 {
 
     /**
@@ -33,10 +33,10 @@ class GracefulInterruptListener extends PHPUnit_Framework_BaseTestListener
     /**
      * A test ended.
      *
-     * @param PHPUnit_Framework_Test $test
-     * @param float                  $time
+     * @param Test  $test
+     * @param float $time
      */
-    public function endTest(PHPUnit_Framework_Test $test, $time) {
+    public function endTest(Test $test, $time) {
         $this->test = $test;
         pcntl_signal_dispatch();
     }

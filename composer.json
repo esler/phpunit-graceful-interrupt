@@ -12,9 +12,9 @@
         }
     ],
     "require": {
-        "php": ">=5.3.0",
+        "php": "^7.0",
         "ext-pcntl": "*",
-        "phpunit/phpunit": ">=4.8 <6.0"
+        "phpunit/phpunit": "^6.0"
     },
     "autoload": {
         "psr-4": {

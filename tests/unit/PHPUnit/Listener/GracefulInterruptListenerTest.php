@@ -1,6 +1,8 @@
 <?php
 namespace Esler\PHPUnit\Listener;
 
+use PHPUnit\Framework\TestCase;
+
 /**
  * Fake test suite with some long tests. It servers like demonstration
  * of listener's feature. Try hit Ctrl+\. Process will not goes into background
@@ -10,7 +12,7 @@ namespace Esler\PHPUnit\Listener;
  * @author     Ondrej Esler <esler.ondrej@gmail.com>
  * @license    MIT
  */
-class GracefulInterruptListenerTest extends \PHPUnit_Framework_TestCase
+class GracefulInterruptListenerTest extends TestCase
 {
 
     /**
