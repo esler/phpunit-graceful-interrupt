@@ -1,5 +1,5 @@
 ## Description
-A simple plug-in which allows to you interrupt running PHPUnit tests gracefully.
+A simple plug-in which allows to you interrupt running PHPUnit tests **gracefully**.
 
 ## Instalation
 ```bash
@@ -16,6 +16,8 @@ Add listener to your `phpunit.xml`
 
 ## Usage
 Just hit `Ctrl+\` to interrupt running tests. Errors and failures from previous tests will be shown.
+
+More [info](https://github.com/esler/phpunit-graceful-interrupt/wiki).
 
 ## License
 MIT
