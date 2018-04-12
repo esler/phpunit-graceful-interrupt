@@ -2,7 +2,8 @@
 namespace Esler\PHPUnit\Listener;
 
 use BadMethodCallException;
-use PHPUnit\Framework\BaseTestListener;
+use PHPUnit\Framework\TestListener;
+use PHPUnit\Framework\TestListenerDefaultImplementation;
 use PHPUnit\Framework\Test;
 
 /**
@@ -14,8 +15,9 @@ use PHPUnit\Framework\Test;
  * @author     Ondrej Esler <esler.ondrej@gmail.com>
  * @license    MIT
  */
-class GracefulInterruptListener extends BaseTestListener
+class GracefulInterruptListener implements TestListener
 {
+    use TestListenerDefaultImplementation;
 
     /**
      * Constructor
@@ -36,7 +38,7 @@ class GracefulInterruptListener extends BaseTestListener
      * @param Test  $test
      * @param float $time
      */
-    public function endTest(Test $test, $time) {
+    public function endTest(Test $test, float $time): void {
         $this->test = $test;
         pcntl_signal_dispatch();
     }
