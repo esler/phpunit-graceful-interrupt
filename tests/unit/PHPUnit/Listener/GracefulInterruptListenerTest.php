@@ -16,11 +16,9 @@ class GracefulInterruptListenerTest extends TestCase
 {
 
     /**
-     * Init before test
-     *
-     * @return void
+     * @before
      */
-    protected function setUp() {
+    protected function disableNestingProtection() {
         // disable nesting protection for ackermann function
         ini_set('xdebug.max_nesting_level', -1);
     }
