@@ -1,7 +1,10 @@
 <phpunit>
-    <listeners>
+    <!-- <listeners>
         <listener class="Esler\PHPUnit\Listener\GracefulInterruptListener" file="./src/PHPUnit/Listener/GracefulInterruptListener.php" />
-    </listeners>
+    </listeners> -->
+    <extensions>
+        <bootstrap class="Esler\PHPUnit\GracefulInterruptExtension" />
+    </extensions>
     <testsuites>
         <testsuite name="Fake testsuite">
             <directory>./tests/unit/</directory>
