@@ -5,6 +5,18 @@ A simple plug-in which allows to you interrupt running PHPUnit tests **gracefull
 ```bash
 composer require --dev esler/phpunit-graceful-interrupt
 ```
+
+#### For PHPUnit >= 10
+```xml
+Add extension to your `phpunit.xml`
+<phpunit>
+    <extensions>
+        <bootstrap class="Esler\PHPUnit\GracefulInterruptExtension" />
+    </extensions>
+</phpunit>
+```
+
+#### For PHPUnit < 10
 Add listener to your `phpunit.xml`
 ```xml
 <phpunit>

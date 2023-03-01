@@ -19,6 +19,9 @@ class GracefulInterruptListener implements TestListener
 {
     use TestListenerDefaultImplementation;
 
+    /** @var Test */
+    private $test;
+
     /**
      * Constructor
      */
