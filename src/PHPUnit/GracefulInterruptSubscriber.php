@@ -1,8 +1,8 @@
 <?php
 namespace Esler\PHPUnit;
 
-use PHPUnit\Event\Test\PreparedSubscriber;
-use PHPUnit\Event\Test\Prepared;
+use PHPUnit\Event\Test\PreparationStartedSubscriber;
+use PHPUnit\Event\Test\PreparationStarted;
 use PHPUnit\Framework\Assert;
 
 /**
@@ -14,11 +14,11 @@ use PHPUnit\Framework\Assert;
  * @author     Ondrej Esler <esler.ondrej@gmail.com>
  * @license    MIT
  */
-final class GracefulInterruptSubscriber implements PreparedSubscriber
+final class GracefulInterruptSubscriber implements PreparationStartedSubscriber
 {
     public bool $interrupted = false;
 
-    public function notify(Prepared $event): void
+    public function notify(PreparationStarted $event): void
     {
         pcntl_signal_dispatch();
 
