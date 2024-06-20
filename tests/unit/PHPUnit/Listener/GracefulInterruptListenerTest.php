@@ -2,6 +2,7 @@
 namespace Esler\PHPUnit\Listener;
 
 use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\Attributes\Before;
 
 /**
  * Fake test suite with some long tests. It servers like demonstration
@@ -18,6 +19,7 @@ class GracefulInterruptListenerTest extends TestCase
     /**
      * @before
      */
+    #[Before]
     protected function disableNestingProtection() {
         // disable nesting protection for ackermann function
         ini_set('xdebug.max_nesting_level', -1);
