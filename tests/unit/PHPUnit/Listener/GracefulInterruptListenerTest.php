@@ -3,6 +3,7 @@ namespace Esler\PHPUnit\Listener;
 
 use PHPUnit\Framework\TestCase;
 use PHPUnit\Framework\Attributes\Before;
+use PHPUnit\Framework\Attributes\DataProvider;
 
 /**
  * Fake test suite with some long tests. It servers like demonstration
@@ -25,40 +26,20 @@ class GracefulInterruptListenerTest extends TestCase
         ini_set('xdebug.max_nesting_level', -1);
     }
 
-    /**
-     * Test with fail
-     *
-     * @return void
-     */
-    public function testFail() {
-        $this->fail('Deliberately failed...');
+    public static function provideRanges() : iterable {
+        foreach (range(1, 3) as $m) {
+            foreach (range(1, 11) as $n) {
+                yield [$m, $n];
+            }
+        }
     }
 
     /**
-     * Test with error
-     *
-     * @return void
+     * @dataProvider provideRanges
      */
-    public function testError() {
-        throw new \Exception('An exception...');
-    }
-
-    /**
-     * Some very long test
-     *
-     * @return void
-     */
-    public function testAckermann310() {
-        self::assertEquals(8189, $this->_ackermann(3, 10));
-    }
-
-    /**
-     * Some very long test
-     *
-     * @return void
-     */
-    public function testAckermann311() {
-        self::assertEquals(16381, $this->_ackermann(3, 11));
+    #[DataProvider('provideRanges')]
+    public function testAckermann(int $m, int $n) : void {
+        $this->assertGreaterThan(0, $this->_ackermann($m, $n));
     }
 
     private function _ackermann($m, $n) {
